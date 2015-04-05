@@ -1,0 +1,25 @@
+PODS:
+  - Alamofire (1.1.4)
+  - Realm (0.91.1):
+    - Realm/Headers (= 0.91.1)
+  - Realm/Headers (0.91.1)
+
+DEPENDENCIES:
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `xcode-6.3`)
+  - Realm
+
+EXTERNAL SOURCES:
+  Alamofire:
+    :branch: xcode-6.3
+    :git: https://github.com/Alamofire/Alamofire.git
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 2ff5749ffc0425f05a1411b5b6fd2c25241b5b14
+    :git: https://github.com/Alamofire/Alamofire.git
+
+SPEC CHECKSUMS:
+  Alamofire: 6a2cbaebe78a6d469bc55ee37f0a24ba22af76ac
+  Realm: b9c1fd9defa26aa7276ce938a8df52ec81f24528
+
+COCOAPODS: 0.36.3
