@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7528.3" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7518.3"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Word_Box" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,142 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pte-39-kwT">
+                                <rect key="frame" x="270" y="520" width="60" height="60"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" none="YES" button="YES" image="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="7nA-NO-umY"/>
+                                    <constraint firstAttribute="width" secondItem="pte-39-kwT" secondAttribute="height" multiplier="1:1" id="H9a-Lh-jON"/>
+                                    <constraint firstAttribute="width" constant="60" id="aCE-ED-Pde"/>
+                                </constraints>
+                                <state key="normal" title="+" image="fab.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="7nA-NO-umY"/>
+                                    </mask>
+                                </variation>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pte-39-kwT" secondAttribute="bottom" constant="20" id="OMf-N8-dYk"/>
+                            <constraint firstAttribute="centerY" secondItem="pte-39-kwT" secondAttribute="centerY" id="Xim-ZX-oVi"/>
+                            <constraint firstAttribute="centerX" secondItem="pte-39-kwT" secondAttribute="centerX" id="nVp-od-xBJ"/>
+                            <constraint firstAttribute="centerY" secondItem="pte-39-kwT" secondAttribute="centerY" id="xqj-az-FPG"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Xim-ZX-oVi"/>
+                                <exclude reference="xqj-az-FPG"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="addButton" destination="pte-39-kwT" id="Oxt-uc-dt3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="576" y="229"/>
+        </scene>
+        <!--Boxes View Controller-->
+        <scene sceneID="3so-uz-qum">
+            <objects>
+                <viewController storyboardIdentifier="BoxesViewController" id="Fu7-Wg-0aQ" customClass="BoxesViewController" customModule="Word_Box" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="r2h-RI-x90"/>
+                        <viewControllerLayoutGuide type="bottom" id="acB-Df-xUs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="izn-hX-qkq">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Boxes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVb-a2-lch">
+                                <rect key="frame" x="276" y="289" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="HVb-a2-lch" secondAttribute="centerY" id="duU-3g-dvg"/>
+                            <constraint firstAttribute="centerX" secondItem="HVb-a2-lch" secondAttribute="centerX" id="u1H-Vn-NVI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fJ-kj-1Yg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="190" y="991"/>
+        </scene>
+        <!--Friends View Controller-->
+        <scene sceneID="fdt-X3-vTD">
+            <objects>
+                <viewController storyboardIdentifier="FriendsViewController" id="sg1-F8-Xzj" customClass="FriendsViewController" customModule="Word_Box" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AcM-kz-M2K"/>
+                        <viewControllerLayoutGuide type="bottom" id="bXv-Km-ZbF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4GH-mO-ayf">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friends" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nf4-cY-chU">
+                                <rect key="frame" x="272" y="289" width="57" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="Nf4-cY-chU" secondAttribute="centerX" id="PCv-eC-l9Q"/>
+                            <constraint firstAttribute="centerY" secondItem="Nf4-cY-chU" secondAttribute="centerY" id="tGG-yW-rGF"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JCi-s5-kE8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="833" y="990"/>
+        </scene>
+        <!--Mine View Controller-->
+        <scene sceneID="vLS-l7-Iuy">
+            <objects>
+                <viewController storyboardIdentifier="MineViewController" id="bTj-Gc-xXt" customClass="MineViewController" customModule="Word_Box" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tlp-dh-bx0"/>
+                        <viewControllerLayoutGuide type="bottom" id="8rc-h4-HIp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fKz-tk-3dz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mine" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crh-Pb-Fn6">
+                                <rect key="frame" x="281" y="289" width="38" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="crh-Pb-Fn6" secondAttribute="centerX" id="aqE-0N-gvZ"/>
+                            <constraint firstAttribute="centerY" secondItem="crh-Pb-Fn6" secondAttribute="centerY" id="gOE-29-hES"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gCa-cj-gnY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1479" y="991"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="fab.png" width="168" height="168"/>
+    </resources>
 </document>

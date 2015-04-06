@@ -14,6 +14,17 @@
 		69060C231AD1C8940062800A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69060C211AD1C8940062800A /* LaunchScreen.xib */; };
 		69060C2F1AD1C8940062800A /* Word_BoxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060C2E1AD1C8940062800A /* Word_BoxTests.swift */; };
 		69060C391AD1C9580062800A /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060C381AD1C9580062800A /* Alamofire.swift */; };
+		69060C3B1AD2CFEA0062800A /* RLMSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060C3A1AD2CFEA0062800A /* RLMSupport.swift */; };
+		69060C3E1AD2D0320062800A /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060C3D1AD2D0320062800A /* Word.swift */; };
+		69060C401AD2D0E90062800A /* TempWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060C3F1AD2D0E90062800A /* TempWord.swift */; };
+		69060C421AD2D0FF0062800A /* Sentence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060C411AD2D0FF0062800A /* Sentence.swift */; };
+		69060C441AD2D26B0062800A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060C431AD2D26B0062800A /* User.swift */; };
+		69060C471AD2D65C0062800A /* NetworkClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060C461AD2D65C0062800A /* NetworkClient.swift */; };
+		69060C4A1AD2D9D60062800A /* BoxesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060C491AD2D9D60062800A /* BoxesViewController.swift */; };
+		69060C4C1AD2DA070062800A /* FriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060C4B1AD2DA070062800A /* FriendsViewController.swift */; };
+		69397D5F1AD2E29D006F5269 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69397D5E1AD2E29D006F5269 /* MineViewController.swift */; };
+		69397D7D1AD2F65F006F5269 /* fab.png in Resources */ = {isa = PBXBuildFile; fileRef = 69397D7C1AD2F65F006F5269 /* fab.png */; };
+		694BAA0F1AD2DBD400A7910C /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694BAA0E1AD2DBD400A7910C /* CAPSPageMenu.swift */; };
 		AA5A0EADB000F28E410EF3AB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECBAC97E5A1AB7A2356C340F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -40,6 +51,17 @@
 		69060C2D1AD1C8940062800A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69060C2E1AD1C8940062800A /* Word_BoxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word_BoxTests.swift; sourceTree = "<group>"; };
 		69060C381AD1C9580062800A /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		69060C3A1AD2CFEA0062800A /* RLMSupport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RLMSupport.swift; sourceTree = "<group>"; };
+		69060C3D1AD2D0320062800A /* Word.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		69060C3F1AD2D0E90062800A /* TempWord.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempWord.swift; sourceTree = "<group>"; };
+		69060C411AD2D0FF0062800A /* Sentence.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sentence.swift; sourceTree = "<group>"; };
+		69060C431AD2D26B0062800A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		69060C461AD2D65C0062800A /* NetworkClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
+		69060C491AD2D9D60062800A /* BoxesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoxesViewController.swift; sourceTree = "<group>"; };
+		69060C4B1AD2DA070062800A /* FriendsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsViewController.swift; sourceTree = "<group>"; };
+		69397D5E1AD2E29D006F5269 /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		69397D7C1AD2F65F006F5269 /* fab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fab.png; sourceTree = "<group>"; };
+		694BAA0E1AD2DBD400A7910C /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
 		9FBDB9FB4F35714111C4E386 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		ECBAC97E5A1AB7A2356C340F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -95,6 +117,12 @@
 		69060C151AD1C8940062800A /* Word Box */ = {
 			isa = PBXGroup;
 			children = (
+				69397D7C1AD2F65F006F5269 /* fab.png */,
+				69060C481AD2D9BE0062800A /* Home */,
+				69060C451AD2D6420062800A /* Network */,
+				69060C3C1AD2D01D0062800A /* Models */,
+				69060C3A1AD2CFEA0062800A /* RLMSupport.swift */,
+				694BAA0E1AD2DBD400A7910C /* CAPSPageMenu.swift */,
 				69060C381AD1C9580062800A /* Alamofire.swift */,
 				69060C181AD1C8940062800A /* AppDelegate.swift */,
 				69060C1A1AD1C8940062800A /* ViewController.swift */,
@@ -129,6 +157,35 @@
 				69060C2D1AD1C8940062800A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		69060C3C1AD2D01D0062800A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				69060C3D1AD2D0320062800A /* Word.swift */,
+				69060C3F1AD2D0E90062800A /* TempWord.swift */,
+				69060C411AD2D0FF0062800A /* Sentence.swift */,
+				69060C431AD2D26B0062800A /* User.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		69060C451AD2D6420062800A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				69060C461AD2D65C0062800A /* NetworkClient.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		69060C481AD2D9BE0062800A /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				69060C491AD2D9D60062800A /* BoxesViewController.swift */,
+				69060C4B1AD2DA070062800A /* FriendsViewController.swift */,
+				69397D5E1AD2E29D006F5269 /* MineViewController.swift */,
+			);
+			name = Home;
 			sourceTree = "<group>";
 		};
 		AF0423E424E2FD431A3995AF /* Frameworks */ = {
@@ -225,6 +282,7 @@
 				69060C1E1AD1C8940062800A /* Main.storyboard in Resources */,
 				69060C231AD1C8940062800A /* LaunchScreen.xib in Resources */,
 				69060C201AD1C8940062800A /* Images.xcassets in Resources */,
+				69397D7D1AD2F65F006F5269 /* fab.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -291,8 +349,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				69060C391AD1C9580062800A /* Alamofire.swift in Sources */,
+				69397D5F1AD2E29D006F5269 /* MineViewController.swift in Sources */,
 				69060C1B1AD1C8940062800A /* ViewController.swift in Sources */,
+				694BAA0F1AD2DBD400A7910C /* CAPSPageMenu.swift in Sources */,
+				69060C3E1AD2D0320062800A /* Word.swift in Sources */,
+				69060C401AD2D0E90062800A /* TempWord.swift in Sources */,
+				69060C441AD2D26B0062800A /* User.swift in Sources */,
+				69060C471AD2D65C0062800A /* NetworkClient.swift in Sources */,
+				69060C4C1AD2DA070062800A /* FriendsViewController.swift in Sources */,
 				69060C191AD1C8940062800A /* AppDelegate.swift in Sources */,
+				69060C421AD2D0FF0062800A /* Sentence.swift in Sources */,
+				69060C4A1AD2D9D60062800A /* BoxesViewController.swift in Sources */,
+				69060C3B1AD2CFEA0062800A /* RLMSupport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
