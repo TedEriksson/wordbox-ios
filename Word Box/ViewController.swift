@@ -10,31 +10,41 @@ import UIKit
 import Alamofire
 import Realm
 
-class ViewController: UIViewController {
-    var pageMenu : CAPSPageMenu?
+class ViewController: UIViewController, CAPSPageMenuDelegate {
+    var pageMenu: CAPSPageMenu?
+    
+    var user: User?
+    
+    var friends: FriendsViewController!
     
     @IBOutlet weak var addButton: UIButton!
+    
+    @IBAction func showCreate(sender: UIButton) {
+        var create = storyboard!.instantiateViewControllerWithIdentifier("CreateSentenceViewController") as! CreateSentenceViewController
+        self.presentViewController(create, animated: true, completion: nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        NetworkClient.updateUser(1)
-        
         var controllerArray = [UIViewController]()
         
-        var boxes = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("BoxesViewController") as! UIViewController
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        var boxes = storyboard.instantiateViewControllerWithIdentifier("BoxesViewController") as! BoxesViewController
         boxes.title = "BOXES"
         controllerArray.append(boxes)
         
-        var friends = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("FriendsViewController") as! UIViewController
+        friends = storyboard.instantiateViewControllerWithIdentifier("FriendsViewController") as! FriendsViewController
         friends.title = "FRIENDS"
         controllerArray.append(friends)
-        
-        var mine = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MineViewController") as! UIViewController
+
+        var mine = storyboard.instantiateViewControllerWithIdentifier("MineViewController") as! UIViewController
         mine.title = "MINE"
         controllerArray.append(mine)
         
         var parameters: [String: AnyObject] = [
+            "bottomMenuHairlineColor": UIColor(red: 0, green: 0, blue: 0, alpha: 0),
             "scrollMenuBackgroundColor": UIColor(red: 24.0/255.0, green: 120.0/255.0, blue: 200.0/255.0, alpha: 1.0),
             "selectionIndicatorColor": UIColor(red: 250.0/255.0, green: 111.0/255.0, blue: 0.0/255.0, alpha: 1.0),
             "menuMargin": 20.0,
@@ -45,14 +55,25 @@ class ViewController: UIViewController {
             "menuItemFont": UIFont(name: "HelveticaNeue-Medium", size: 14.0)!,
             "useMenuLikeSegmentedControl": true,
             "selectionIndicatorHeight": 2.0,
-            "menuItemSeparatorPercentageHeight": 0.1]
+            "menuItemSeparatorPercentageHeight": 0.1,
+            "scrollAnimationDurationOnMenuItemTap": 170]
         
         pageMenu = CAPSPageMenu(viewControllers: controllerArray, frame: CGRectMake(0.0, 20.0, self.view.frame.width, self.view.frame.height), options: parameters)
+        
+        pageMenu!.delegate = self
         
         self.view.addSubview(pageMenu!.view)
         self.view.backgroundColor = UIColor(red: 24.0/255.0, green: 120.0/255.0, blue: 200.0/255.0, alpha: 1.0)
         
         self.view.bringSubviewToFront(addButton)
+        
+        NetworkClient.updateUser(1, callback: { (user: User) -> () in
+            println("User: " + user.description)
+            
+            boxes.updateUI(user.sentences)
+            self.friends.updateUI(user.friends)
+            self.user = user
+        })
     }
 
     override func didReceiveMemoryWarning() {

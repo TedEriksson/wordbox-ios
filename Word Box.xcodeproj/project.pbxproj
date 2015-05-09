@@ -25,6 +25,14 @@
 		69397D5F1AD2E29D006F5269 /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69397D5E1AD2E29D006F5269 /* MineViewController.swift */; };
 		69397D7D1AD2F65F006F5269 /* fab.png in Resources */ = {isa = PBXBuildFile; fileRef = 69397D7C1AD2F65F006F5269 /* fab.png */; };
 		694BAA0F1AD2DBD400A7910C /* CAPSPageMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694BAA0E1AD2DBD400A7910C /* CAPSPageMenu.swift */; };
+		696F62AC1AFD825900C961A4 /* WhiteNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F62AB1AFD825900C961A4 /* WhiteNavigationController.swift */; };
+		696F62AF1AFE85C100C961A4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F62AE1AFE85C100C961A4 /* LoginViewController.swift */; };
+		696F62B11AFE88DC00C961A4 /* wordbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 696F62B01AFE88DC00C961A4 /* wordbox.png */; };
+		696F62B31AFE9BFF00C961A4 /* ResolveLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F62B21AFE9BFF00C961A4 /* ResolveLoginViewController.swift */; };
+		69AA71CC1AF50FC000A8F99B /* SentenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AA71CB1AF50FC000A8F99B /* SentenceCell.swift */; };
+		69AA71CE1AF518A400A8F99B /* me.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69AA71CD1AF518A400A8F99B /* me.jpg */; };
+		69AA71D01AF5216D00A8F99B /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AA71CF1AF5216D00A8F99B /* FriendCell.swift */; };
+		69AA71D31AF52DD300A8F99B /* CreateSentenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AA71D21AF52DD300A8F99B /* CreateSentenceViewController.swift */; };
 		AA5A0EADB000F28E410EF3AB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECBAC97E5A1AB7A2356C340F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -62,6 +70,14 @@
 		69397D5E1AD2E29D006F5269 /* MineViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
 		69397D7C1AD2F65F006F5269 /* fab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fab.png; sourceTree = "<group>"; };
 		694BAA0E1AD2DBD400A7910C /* CAPSPageMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAPSPageMenu.swift; sourceTree = "<group>"; };
+		696F62AB1AFD825900C961A4 /* WhiteNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WhiteNavigationController.swift; sourceTree = "<group>"; };
+		696F62AE1AFE85C100C961A4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		696F62B01AFE88DC00C961A4 /* wordbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordbox.png; sourceTree = "<group>"; };
+		696F62B21AFE9BFF00C961A4 /* ResolveLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolveLoginViewController.swift; sourceTree = "<group>"; };
+		69AA71CB1AF50FC000A8F99B /* SentenceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentenceCell.swift; sourceTree = "<group>"; };
+		69AA71CD1AF518A400A8F99B /* me.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = me.jpg; sourceTree = "<group>"; };
+		69AA71CF1AF5216D00A8F99B /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
+		69AA71D21AF52DD300A8F99B /* CreateSentenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateSentenceViewController.swift; sourceTree = "<group>"; };
 		9FBDB9FB4F35714111C4E386 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		ECBAC97E5A1AB7A2356C340F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -117,6 +133,10 @@
 		69060C151AD1C8940062800A /* Word Box */ = {
 			isa = PBXGroup;
 			children = (
+				696F62B01AFE88DC00C961A4 /* wordbox.png */,
+				696F62AD1AFE85A400C961A4 /* Login */,
+				69AA71D11AF52DBC00A8F99B /* CreateSentence */,
+				69AA71CD1AF518A400A8F99B /* me.jpg */,
 				69397D7C1AD2F65F006F5269 /* fab.png */,
 				69060C481AD2D9BE0062800A /* Home */,
 				69060C451AD2D6420062800A /* Network */,
@@ -130,6 +150,7 @@
 				69060C1F1AD1C8940062800A /* Images.xcassets */,
 				69060C211AD1C8940062800A /* LaunchScreen.xib */,
 				69060C161AD1C8940062800A /* Supporting Files */,
+				696F62AB1AFD825900C961A4 /* WhiteNavigationController.swift */,
 			);
 			path = "Word Box";
 			sourceTree = "<group>";
@@ -184,8 +205,27 @@
 				69060C491AD2D9D60062800A /* BoxesViewController.swift */,
 				69060C4B1AD2DA070062800A /* FriendsViewController.swift */,
 				69397D5E1AD2E29D006F5269 /* MineViewController.swift */,
+				69AA71CB1AF50FC000A8F99B /* SentenceCell.swift */,
+				69AA71CF1AF5216D00A8F99B /* FriendCell.swift */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		696F62AD1AFE85A400C961A4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				696F62AE1AFE85C100C961A4 /* LoginViewController.swift */,
+				696F62B21AFE9BFF00C961A4 /* ResolveLoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		69AA71D11AF52DBC00A8F99B /* CreateSentence */ = {
+			isa = PBXGroup;
+			children = (
+				69AA71D21AF52DD300A8F99B /* CreateSentenceViewController.swift */,
+			);
+			name = CreateSentence;
 			sourceTree = "<group>";
 		};
 		AF0423E424E2FD431A3995AF /* Frameworks */ = {
@@ -279,6 +319,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69AA71CE1AF518A400A8F99B /* me.jpg in Resources */,
+				696F62B11AFE88DC00C961A4 /* wordbox.png in Resources */,
 				69060C1E1AD1C8940062800A /* Main.storyboard in Resources */,
 				69060C231AD1C8940062800A /* LaunchScreen.xib in Resources */,
 				69060C201AD1C8940062800A /* Images.xcassets in Resources */,
@@ -348,15 +390,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				696F62AF1AFE85C100C961A4 /* LoginViewController.swift in Sources */,
 				69060C391AD1C9580062800A /* Alamofire.swift in Sources */,
 				69397D5F1AD2E29D006F5269 /* MineViewController.swift in Sources */,
 				69060C1B1AD1C8940062800A /* ViewController.swift in Sources */,
 				694BAA0F1AD2DBD400A7910C /* CAPSPageMenu.swift in Sources */,
+				69AA71D01AF5216D00A8F99B /* FriendCell.swift in Sources */,
 				69060C3E1AD2D0320062800A /* Word.swift in Sources */,
 				69060C401AD2D0E90062800A /* TempWord.swift in Sources */,
+				69AA71CC1AF50FC000A8F99B /* SentenceCell.swift in Sources */,
 				69060C441AD2D26B0062800A /* User.swift in Sources */,
+				69AA71D31AF52DD300A8F99B /* CreateSentenceViewController.swift in Sources */,
 				69060C471AD2D65C0062800A /* NetworkClient.swift in Sources */,
 				69060C4C1AD2DA070062800A /* FriendsViewController.swift in Sources */,
+				696F62AC1AFD825900C961A4 /* WhiteNavigationController.swift in Sources */,
+				696F62B31AFE9BFF00C961A4 /* ResolveLoginViewController.swift in Sources */,
 				69060C191AD1C8940062800A /* AppDelegate.swift in Sources */,
 				69060C421AD2D0FF0062800A /* Sentence.swift in Sources */,
 				69060C4A1AD2D9D60062800A /* BoxesViewController.swift in Sources */,

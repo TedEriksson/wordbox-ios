@@ -17,4 +17,14 @@ class Sentence: RLMObject {
     override class func primaryKey() -> String {
         return "id"
     }
+    
+    func getWordsAsString() -> String {
+        var sentence = ""
+        for word in words {
+            let word = word as! Word
+            sentence += word.text + " "
+        }
+        
+        return sentence.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet())
+    }
 }
