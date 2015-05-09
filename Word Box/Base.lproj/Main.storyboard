@@ -164,15 +164,30 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WeD-vd-iRW">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="wordbox.png" translatesAutoresizingMaskIntoConstraints="NO" id="eFV-Bm-F03">
+                                        <rect key="frame" x="28" y="28" width="544" height="487"/>
+                                    </imageView>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="KpD-Tg-yhn">
-                                        <rect key="frame" x="290" y="290" width="20" height="20"/>
+                                        <rect key="frame" x="290" y="540" width="20" height="20"/>
                                     </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.97254901959999995" green="0.43137254899999999" blue="0.14117647059999999" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottomMargin" secondItem="KpD-Tg-yhn" secondAttribute="bottom" constant="32" id="8yc-OG-bZh"/>
+                                    <constraint firstItem="KpD-Tg-yhn" firstAttribute="top" secondItem="eFV-Bm-F03" secondAttribute="bottom" constant="25" id="Cle-L3-mgK"/>
                                     <constraint firstAttribute="centerY" secondItem="KpD-Tg-yhn" secondAttribute="centerY" id="HFV-ns-6gI"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="eFV-Bm-F03" secondAttribute="trailing" constant="20" id="MtQ-3K-wv5"/>
+                                    <constraint firstItem="eFV-Bm-F03" firstAttribute="top" secondItem="WeD-vd-iRW" secondAttribute="topMargin" constant="20" id="eE9-Q6-wsC"/>
                                     <constraint firstAttribute="centerX" secondItem="KpD-Tg-yhn" secondAttribute="centerX" id="fnY-EK-u9F"/>
+                                    <constraint firstItem="eFV-Bm-F03" firstAttribute="leading" secondItem="WeD-vd-iRW" secondAttribute="leadingMargin" constant="20" id="if1-Ql-Xge"/>
+                                    <constraint firstAttribute="centerX" secondItem="KpD-Tg-yhn" secondAttribute="centerX" id="ngv-g7-yrD"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HFV-ns-6gI"/>
+                                        <exclude reference="fnY-EK-u9F"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
