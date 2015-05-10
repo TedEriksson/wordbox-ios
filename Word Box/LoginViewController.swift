@@ -14,15 +14,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var password: UITextField!
     
     @IBAction func clickLogin(sender: AnyObject) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(email.text, forKey: "email")
-        defaults.setObject(password.text, forKey: "password")
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
-    let resolve = storyboard.instantiateViewControllerWithIdentifier("ResolveLoginViewController") as! ResolveLoginViewController
-        
-    navigationController?.pushViewController(resolve, animated: true)
+        let resolve = storyboard.instantiateViewControllerWithIdentifier("ResolveLoginViewController") as! ResolveLoginViewController
+        resolve.signInUser(email.text, password: password.text)
+        navigationController?.pushViewController(resolve, animated: true)
     }
     
     override func viewDidLoad() {

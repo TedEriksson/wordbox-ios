@@ -29,6 +29,7 @@
 		696F62AF1AFE85C100C961A4 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F62AE1AFE85C100C961A4 /* LoginViewController.swift */; };
 		696F62B11AFE88DC00C961A4 /* wordbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 696F62B01AFE88DC00C961A4 /* wordbox.png */; };
 		696F62B31AFE9BFF00C961A4 /* ResolveLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F62B21AFE9BFF00C961A4 /* ResolveLoginViewController.swift */; };
+		696F62B51AFFB40900C961A4 /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 696F62B41AFFB40900C961A4 /* WordCell.swift */; };
 		69AA71CC1AF50FC000A8F99B /* SentenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AA71CB1AF50FC000A8F99B /* SentenceCell.swift */; };
 		69AA71CE1AF518A400A8F99B /* me.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 69AA71CD1AF518A400A8F99B /* me.jpg */; };
 		69AA71D01AF5216D00A8F99B /* FriendCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69AA71CF1AF5216D00A8F99B /* FriendCell.swift */; };
@@ -74,6 +75,7 @@
 		696F62AE1AFE85C100C961A4 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		696F62B01AFE88DC00C961A4 /* wordbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wordbox.png; sourceTree = "<group>"; };
 		696F62B21AFE9BFF00C961A4 /* ResolveLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResolveLoginViewController.swift; sourceTree = "<group>"; };
+		696F62B41AFFB40900C961A4 /* WordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		69AA71CB1AF50FC000A8F99B /* SentenceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SentenceCell.swift; sourceTree = "<group>"; };
 		69AA71CD1AF518A400A8F99B /* me.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = me.jpg; sourceTree = "<group>"; };
 		69AA71CF1AF5216D00A8F99B /* FriendCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendCell.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				69AA71D21AF52DD300A8F99B /* CreateSentenceViewController.swift */,
+				696F62B41AFFB40900C961A4 /* WordCell.swift */,
 			);
 			name = CreateSentence;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				696F62B31AFE9BFF00C961A4 /* ResolveLoginViewController.swift in Sources */,
 				69060C191AD1C8940062800A /* AppDelegate.swift in Sources */,
 				69060C421AD2D0FF0062800A /* Sentence.swift in Sources */,
+				696F62B51AFFB40900C961A4 /* WordCell.swift in Sources */,
 				69060C4A1AD2D9D60062800A /* BoxesViewController.swift in Sources */,
 				69060C3B1AD2CFEA0062800A /* RLMSupport.swift in Sources */,
 			);

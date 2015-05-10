@@ -16,6 +16,7 @@ class ViewController: UIViewController, CAPSPageMenuDelegate {
     var user: User?
     
     var friends: FriendsViewController!
+    var boxes: BoxesViewController!
     
     @IBOutlet weak var addButton: UIButton!
     
@@ -31,7 +32,7 @@ class ViewController: UIViewController, CAPSPageMenuDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        var boxes = storyboard.instantiateViewControllerWithIdentifier("BoxesViewController") as! BoxesViewController
+        boxes = storyboard.instantiateViewControllerWithIdentifier("BoxesViewController") as! BoxesViewController
         boxes.title = "BOXES"
         controllerArray.append(boxes)
         
@@ -39,8 +40,9 @@ class ViewController: UIViewController, CAPSPageMenuDelegate {
         friends.title = "FRIENDS"
         controllerArray.append(friends)
 
-        var mine = storyboard.instantiateViewControllerWithIdentifier("MineViewController") as! UIViewController
+        var mine = storyboard.instantiateViewControllerWithIdentifier("MineViewController") as! MineViewController
         mine.title = "MINE"
+        mine.setViewController(self)
         controllerArray.append(mine)
         
         var parameters: [String: AnyObject] = [
@@ -67,13 +69,12 @@ class ViewController: UIViewController, CAPSPageMenuDelegate {
         
         self.view.bringSubviewToFront(addButton)
         
-        NetworkClient.updateUser(1, callback: { (user: User) -> () in
-            println("User: " + user.description)
-            
-            boxes.updateUI(user.sentences)
-            self.friends.updateUI(user.friends)
-            self.user = user
-        })
+        self.boxes.updateUI(self.user!.sentences)
+        self.friends.updateUI(self.user!.friends)
+    }
+    
+    func setUserObject(user: User) {
+        self.user = user
     }
 
     override func didReceiveMemoryWarning() {

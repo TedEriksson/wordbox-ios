@@ -10,5 +10,15 @@ import Foundation
 import UIKit
 
 class MineViewController: UIViewController {
+    var parent: ViewController?
     
+    func setViewController(vc: ViewController) {
+        parent = vc
+    }
+    
+    @IBAction func logOut(sender: AnyObject) {
+        NetworkClient.logOut { (success) -> () in
+            self.parent?.navigationController?.popToRootViewControllerAnimated(true)
+        }
+    }
 }

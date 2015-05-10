@@ -36,7 +36,6 @@ class NetworkClient {
         ]
         
         Alamofire.request(.POST, "\(baseUrl)/auth/sign_in", parameters: params)
-            .validate()
             .responseJSON { (_, response, JSON, _) in
                 if (response?.statusCode >= 400) {
                     callback(nil)
@@ -48,23 +47,80 @@ class NetworkClient {
                 
                 realm.transactionWithBlock({ () -> Void in
                     let user = User.createOrUpdateInRealm(realm, withObject: JSON?.valueForKey("data"))
+                    callback(user)
+                })
+            }
+    }
+    
+    class func updateLoggedInUser(callback: (User?) -> ()) {
+        setHeaderFields()
+        Alamofire.request(.GET, "\(baseUrl)/users/me")
+            .responseJSON { (_, response, json, _) -> Void in
+                if (response?.statusCode >= 400) {
+                    println(response?.statusCode)
+                    callback(nil)
+                    return
+                }
+                
+                self.updateHeaderFields(response!)
+                
+                let realm = RLMRealm.defaultRealm()
+                
+                realm.transactionWithBlock({ () -> Void in
+                    let user = User.createOrUpdateInRealm(realm, withObject: json)
                     
                     callback(user)
                 })
+        }
+
+    }
+    
+    class func logOut(callback: (Bool) -> ()) {
+        setHeaderFields()
+        Alamofire.request(.DELETE, "\(baseUrl)/auth/sign_out")
+            .responseJSON { (_, response, JSON, _) in
+                self.updateHeaderFields(response!)
+                callback(true)
+        }
+    }
+    
+    class func createSentence(words: [String], callback: (Bool) -> ()) {
+        setHeaderFields()
+        Alamofire.request(.POST, "\(baseUrl)/sentences", parameters: [ "words": words ])
+            .responseJSON { (_, response, JSON, _) in
+                self.updateHeaderFields(response!)
+                if (response?.statusCode >= 400) {
+                    callback(false)
+                    return
+                }
+                callback(true)
             }
     }
     
     class func setHeaderFields() {
         let defaults = NSUserDefaults.standardUserDefaults()
         
-        let manager = Manager.sharedInstance
-        manager.session.configuration.HTTPAdditionalHeaders = [
-            "Access-Token": defaults.objectForKey("access-token") as! String,
-            "Uid": defaults.objectForKey("uid") as! String,
-            "Token-Type": defaults.objectForKey("token-type") as! String,
-            "Client": defaults.objectForKey("client") as! String,
-            "Expiry": defaults.objectForKey("expiry") as! String
-        ]
+        let manager = Alamofire.Manager.sharedInstance
+        let at = defaults.objectForKey("access-token") as? String
+        let uid = defaults.objectForKey("uid") as? String
+        let tt = defaults.objectForKey("token-type") as? String
+        let c = defaults.objectForKey("client") as? String
+        let e = defaults.objectForKey("expiry") as? String
+        println(at)
+        println(uid)
+        println(tt)
+        println(c)
+        println(e)
+        if let at = at, let uid = uid, let tt = tt, let c = c, let e = e {
+            manager.session.configuration.HTTPAdditionalHeaders = [
+                "Access-Token": at,
+                "Uid": uid,
+                "Token-Type": tt,
+                "Client": c,
+                "Expiry": e
+            ]
+            println("headers: \(manager.session.configuration.HTTPAdditionalHeaders)")
+        }
     }
     
     class func updateHeaderFields(response: NSHTTPURLResponse) {
@@ -74,5 +130,6 @@ class NetworkClient {
         defaults.setObject(response.allHeaderFields["Token-Type"], forKey: "token-type")
         defaults.setObject(response.allHeaderFields["Client"], forKey: "client")
         defaults.setObject(response.allHeaderFields["Expiry"], forKey: "expiry")
+        defaults.synchronize()
     }
 }
