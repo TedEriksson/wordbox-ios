@@ -17,6 +17,7 @@ class ViewController: UIViewController, CAPSPageMenuDelegate {
     
     var friends: FriendsViewController!
     var boxes: BoxesViewController!
+    var mine: MineViewController!
     
     @IBOutlet weak var addButton: UIButton!
     
@@ -34,13 +35,15 @@ class ViewController: UIViewController, CAPSPageMenuDelegate {
         
         boxes = storyboard.instantiateViewControllerWithIdentifier("BoxesViewController") as! BoxesViewController
         boxes.title = "BOXES"
+        boxes.setViewController(self)
         controllerArray.append(boxes)
         
         friends = storyboard.instantiateViewControllerWithIdentifier("FriendsViewController") as! FriendsViewController
         friends.title = "FRIENDS"
+        friends.setViewController(self)
         controllerArray.append(friends)
 
-        var mine = storyboard.instantiateViewControllerWithIdentifier("MineViewController") as! MineViewController
+        mine = storyboard.instantiateViewControllerWithIdentifier("MineViewController") as! MineViewController
         mine.title = "MINE"
         mine.setViewController(self)
         controllerArray.append(mine)
@@ -68,9 +71,6 @@ class ViewController: UIViewController, CAPSPageMenuDelegate {
         self.view.backgroundColor = UIColor(red: 24.0/255.0, green: 120.0/255.0, blue: 200.0/255.0, alpha: 1.0)
         
         self.view.bringSubviewToFront(addButton)
-        
-        self.boxes.updateUI(self.user!.sentences)
-        self.friends.updateUI(self.user!.friends)
     }
     
     func setUserObject(user: User) {

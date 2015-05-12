@@ -13,7 +13,13 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var  email: UITextField!
     @IBOutlet weak var password: UITextField!
     
-    @IBAction func clickLogin(sender: AnyObject) {
+    @IBAction func clickSignUp(sender: AnyObject) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let signIn = storyboard.instantiateViewControllerWithIdentifier("SignUpViewController") as! SignUpViewController
+        navigationController?.pushViewController(signIn, animated: true)
+    }
+    
+    @IBAction func clickLogin(sender: AnyObject?) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let resolve = storyboard.instantiateViewControllerWithIdentifier("ResolveLoginViewController") as! ResolveLoginViewController
         resolve.signInUser(email.text, password: password.text)

@@ -97,6 +97,31 @@ class NetworkClient {
             }
     }
     
+    class func createNewUser(email: String, username: String, password: String, callback: (User?, [String]?) -> ()) {
+        let params = [
+            "email": email,
+            "username": username,
+            "password": password
+        ]
+        
+        Alamofire.request(.POST, "\(baseUrl)/auth", parameters: params)
+            .responseJSON { (_, response, JSON, _) in
+                if (response?.statusCode >= 400) {
+                    callback(nil, JSON?.valueForKey("errors")?.valueForKey("full_messages") as? [String])
+                    return
+                }
+                self.updateHeaderFields(response!)
+                
+                let realm = RLMRealm.defaultRealm()
+                
+                realm.transactionWithBlock({ () -> Void in
+                    let user = User.createOrUpdateInRealm(realm, withObject: JSON?.valueForKey("data"))
+                    callback(user, nil)
+                })
+        }
+
+    }
+    
     class func setHeaderFields() {
         let defaults = NSUserDefaults.standardUserDefaults()
         

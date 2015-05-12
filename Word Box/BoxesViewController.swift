@@ -17,8 +17,18 @@ class BoxesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var sentences: RLMArray?
     
+    var parent: ViewController?
+    
+    func setViewController(vc: ViewController) {
+        parent = vc
+    }
+    
     override func viewDidLoad() {
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 80))
+        
+        sentences = parent?.user?.sentences
+        tableView.reloadData()
+        spinner.stopAnimating()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,7 +49,6 @@ class BoxesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func updateUI(sentences: RLMArray) {
         self.sentences = sentences
-        
         spinner?.stopAnimating()
         tableView?.reloadData()
     }
