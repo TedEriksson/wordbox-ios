@@ -8,9 +8,9 @@
 //
 
 import Foundation
-import Realm
+import RealmSwift
 
-class Word: RLMObject {
+class Word: Object {
     dynamic var id = 0
     dynamic var text = ""
     dynamic var order = 0

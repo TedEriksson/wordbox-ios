@@ -8,14 +8,14 @@
 
 import Foundation
 import UIKit
-import Realm
+import RealmSwift
 
 class BoxesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var tableView: UITableView!
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    var sentences: RLMArray?
+    var sentences: List<Sentence>?
     
     var parent: ViewController?
     
@@ -42,12 +42,12 @@ class BoxesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Box", forIndexPath: indexPath) as! SentenceCell
         
-        cell.title?.text = (sentences?.objectAtIndex(UInt(indexPath.row)) as! Sentence).getWordsAsString()
+        cell.title?.text = sentences?[indexPath.row].getWordsAsString()
         
         return cell
     }
     
-    func updateUI(sentences: RLMArray) {
+    func updateUI(sentences: List<Sentence>) {
         self.sentences = sentences
         spinner?.stopAnimating()
         tableView?.reloadData()

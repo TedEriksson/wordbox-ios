@@ -9,18 +9,24 @@
 // Alamofire
 #define COCOAPODS_POD_AVAILABLE_Alamofire
 #define COCOAPODS_VERSION_MAJOR_Alamofire 1
-#define COCOAPODS_VERSION_MINOR_Alamofire 1
-#define COCOAPODS_VERSION_PATCH_Alamofire 4
+#define COCOAPODS_VERSION_MINOR_Alamofire 2
+#define COCOAPODS_VERSION_PATCH_Alamofire 2
 
 // Realm
 #define COCOAPODS_POD_AVAILABLE_Realm
 #define COCOAPODS_VERSION_MAJOR_Realm 0
-#define COCOAPODS_VERSION_MINOR_Realm 91
-#define COCOAPODS_VERSION_PATCH_Realm 1
+#define COCOAPODS_VERSION_MINOR_Realm 92
+#define COCOAPODS_VERSION_PATCH_Realm 3
 
 // Realm/Headers
 #define COCOAPODS_POD_AVAILABLE_Realm_Headers
 #define COCOAPODS_VERSION_MAJOR_Realm_Headers 0
-#define COCOAPODS_VERSION_MINOR_Realm_Headers 91
-#define COCOAPODS_VERSION_PATCH_Realm_Headers 1
+#define COCOAPODS_VERSION_MINOR_Realm_Headers 92
+#define COCOAPODS_VERSION_PATCH_Realm_Headers 3
+
+// RealmSwift
+#define COCOAPODS_POD_AVAILABLE_RealmSwift
+#define COCOAPODS_VERSION_MAJOR_RealmSwift 0
+#define COCOAPODS_VERSION_MINOR_RealmSwift 92
+#define COCOAPODS_VERSION_PATCH_RealmSwift 3
 

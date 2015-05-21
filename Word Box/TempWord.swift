@@ -7,9 +7,9 @@
 //
 
 import Foundation
-import Realm
+import RealmSwift
 
-class TempWord: RLMObject {
+class TempWord: Object {
     dynamic var text = ""
     dynamic var order = 0
 }

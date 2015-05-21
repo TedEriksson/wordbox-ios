@@ -8,13 +8,13 @@
 
 import Foundation
 import UIKit
-import Realm
+import RealmSwift
 
 class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    var friends: RLMArray?
+    var friends: List<User>?
     
     var parent: ViewController?
     
@@ -54,7 +54,7 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
             return cell
         }
         
-        cell.username?.text = (friends?.objectAtIndex(UInt(indexPath.row - 1)) as! User).username
+        cell.username?.text = friends?[indexPath.row - 1].username
         
         return cell
     }
@@ -73,11 +73,11 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
             popover?.delegate = self
             popover?.sourceView = cell
             popover?.sourceRect = CGRect(x: cell.frame.origin.x, y: cell.frame.origin.y, width: cell.frame.width, height: cell.frame.height - 10)
-            presentViewController(newFriendPopoverViewController, animated: true, completion: nil)
+            parent!.navigationController!.presentViewController(newFriendPopoverViewController, animated: true, completion: nil)
         }
     }
     
-    func updateUI(friends: RLMArray) {
+    func updateUI(friends: List<User>) {
         self.friends = friends
         tableView?.reloadData()
         spinner?.stopAnimating()

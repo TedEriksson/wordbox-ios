@@ -7,13 +7,13 @@
 //
 
 import Foundation
-import Realm
+import RealmSwift
 
-class User: RLMObject {
+class User: Object {
     dynamic var id = 0
     dynamic var username = ""
-    dynamic var friends = RLMArray(objectClassName: User.className())
-    dynamic var sentences = RLMArray(objectClassName: Sentence.className())
+    var friends = List<User>()
+    var sentences = List<Sentence>()
     
     override class func primaryKey() -> String {
         return "id"

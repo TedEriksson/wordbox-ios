@@ -7,12 +7,12 @@
 //
 
 import Foundation
-import Realm
+import RealmSwift
 
-class Sentence: RLMObject {
+class Sentence: Object {
     dynamic var id = 0
     dynamic var hearts = 0
-    dynamic var words = RLMArray(objectClassName: Word.className())
+    var words = List<Word>()
     
     override class func primaryKey() -> String {
         return "id"
@@ -21,7 +21,6 @@ class Sentence: RLMObject {
     func getWordsAsString() -> String {
         var sentence = ""
         for word in words {
-            let word = word as! Word
             sentence += word.text + " "
         }
         

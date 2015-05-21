@@ -89,16 +89,16 @@ id RLMGetObject(RLMRealm *realm, NSString *objectClassName, id key);
 // create object from array or dictionary
 RLMObjectBase *RLMCreateObjectInRealmWithValue(RLMRealm *realm, NSString *className, id value, RLMCreationOptions options);
 
-
 //
 // Accessor Creation
 //
 
 // Create accessors
-RLMObjectBase *RLMCreateObjectAccessor(__unsafe_unretained RLMRealm *const realm,
-                                       __unsafe_unretained RLMObjectSchema *const objectSchema,
+RLMObjectBase *RLMCreateObjectAccessor(RLMRealm *realm,
+                                       RLMObjectSchema *objectSchema,
                                        NSUInteger index);
 
+void RLMInitializeSwiftListAccessor(RLMObjectBase *object);
 
 #ifdef __cplusplus
 }

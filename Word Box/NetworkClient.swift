@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-import Realm
+import RealmSwift
 
 class NetworkClient {
     static let baseUrl = "https://wordbox.herokuapp.com"
@@ -19,13 +19,13 @@ class NetworkClient {
             .responseJSON { (_, response, json, _) -> Void in
                 self.updateHeaderFields(response!)
                 
-                let realm = RLMRealm.defaultRealm()
+                let realm = Realm()
                 
-                realm.transactionWithBlock({ () -> Void in
-                    let user = User.createOrUpdateInRealm(realm, withObject: json)
+                realm.write {
+                    let user = realm.create(User.self, value: json!, update: true)
                     
                     callback(user)
-                })
+                }
         }
     }
     
@@ -43,12 +43,13 @@ class NetworkClient {
                 }
                 self.updateHeaderFields(response!)
                 
-                let realm = RLMRealm.defaultRealm()
+                let realm = Realm()
                 
-                realm.transactionWithBlock({ () -> Void in
-                    let user = User.createOrUpdateInRealm(realm, withObject: JSON?.valueForKey("data"))
+                realm.write {
+                    let user = realm.create(User.self, value: JSON!.valueForKey("data")!, update: true)
+                    
                     callback(user)
-                })
+                }
             }
     }
     
@@ -64,13 +65,13 @@ class NetworkClient {
                 
                 self.updateHeaderFields(response!)
                 
-                let realm = RLMRealm.defaultRealm()
+                let realm = Realm()
                 
-                realm.transactionWithBlock({ () -> Void in
-                    let user = User.createOrUpdateInRealm(realm, withObject: json)
+                realm.write {
+                    let user = realm.create(User.self, value: json!, update: true)
                     
                     callback(user)
-                })
+                }
         }
 
     }
@@ -112,12 +113,13 @@ class NetworkClient {
                 }
                 self.updateHeaderFields(response!)
                 
-                let realm = RLMRealm.defaultRealm()
+                let realm = Realm()
                 
-                realm.transactionWithBlock({ () -> Void in
-                    let user = User.createOrUpdateInRealm(realm, withObject: JSON?.valueForKey("data"))
+                realm.write {
+                    let user = realm.create(User.self, value: JSON!.valueForKey("data")!, update: true)
+                    
                     callback(user, nil)
-                })
+                }
         }
 
     }
@@ -131,11 +133,11 @@ class NetworkClient {
         let tt = defaults.objectForKey("token-type") as? String
         let c = defaults.objectForKey("client") as? String
         let e = defaults.objectForKey("expiry") as? String
-        println(at)
-        println(uid)
-        println(tt)
-        println(c)
-        println(e)
+//        println(at)
+//        println(uid)
+//        println(tt)
+//        println(c)
+//        println(e)
         if let at = at, let uid = uid, let tt = tt, let c = c, let e = e {
             manager.session.configuration.HTTPAdditionalHeaders = [
                 "Access-Token": at,
@@ -144,7 +146,6 @@ class NetworkClient {
                 "Client": c,
                 "Expiry": e
             ]
-            println("headers: \(manager.session.configuration.HTTPAdditionalHeaders)")
         }
     }
     
