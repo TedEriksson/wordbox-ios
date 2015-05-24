@@ -49,7 +49,7 @@ class ResolveLoginViewController: UIViewController {
             println(user)
 
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let home = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as! ViewController
+            let home = storyboard.instantiateViewControllerWithIdentifier("HomeViewController") as! HomeViewController
             home.setUserObject(user)
             self.navigationController?.pushViewController(home, animated: true)
         } else {

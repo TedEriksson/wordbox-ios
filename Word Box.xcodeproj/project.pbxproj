@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		69060C191AD1C8940062800A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060C181AD1C8940062800A /* AppDelegate.swift */; };
-		69060C1B1AD1C8940062800A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060C1A1AD1C8940062800A /* ViewController.swift */; };
+		69060C1B1AD1C8940062800A /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69060C1A1AD1C8940062800A /* HomeViewController.swift */; };
 		69060C1E1AD1C8940062800A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69060C1C1AD1C8940062800A /* Main.storyboard */; };
 		69060C201AD1C8940062800A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69060C1F1AD1C8940062800A /* Images.xcassets */; };
 		69060C231AD1C8940062800A /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 69060C211AD1C8940062800A /* LaunchScreen.xib */; };
@@ -55,7 +55,7 @@
 		69060C131AD1C8940062800A /* Word Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Word Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69060C171AD1C8940062800A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		69060C181AD1C8940062800A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		69060C1A1AD1C8940062800A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		69060C1A1AD1C8940062800A /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		69060C1D1AD1C8940062800A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		69060C1F1AD1C8940062800A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Word Box/Images.xcassets"; sourceTree = "<group>"; };
 		69060C221AD1C8940062800A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -153,7 +153,6 @@
 				69060C3C1AD2D01D0062800A /* Models */,
 				69A6B44D1B02AFAE00A89CE7 /* Libs */,
 				69060C181AD1C8940062800A /* AppDelegate.swift */,
-				69060C1A1AD1C8940062800A /* ViewController.swift */,
 				69060C1C1AD1C8940062800A /* Main.storyboard */,
 				69060C211AD1C8940062800A /* LaunchScreen.xib */,
 				696F62AB1AFD825900C961A4 /* WhiteNavigationController.swift */,
@@ -209,6 +208,7 @@
 		69060C481AD2D9BE0062800A /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				69060C1A1AD1C8940062800A /* HomeViewController.swift */,
 				69060C491AD2D9D60062800A /* BoxesViewController.swift */,
 				69060C4B1AD2DA070062800A /* FriendsViewController.swift */,
 				69397D5E1AD2E29D006F5269 /* MineViewController.swift */,
@@ -431,7 +431,7 @@
 				696F62AF1AFE85C100C961A4 /* LoginViewController.swift in Sources */,
 				69060C391AD1C9580062800A /* Alamofire.swift in Sources */,
 				69397D5F1AD2E29D006F5269 /* MineViewController.swift in Sources */,
-				69060C1B1AD1C8940062800A /* ViewController.swift in Sources */,
+				69060C1B1AD1C8940062800A /* HomeViewController.swift in Sources */,
 				694BAA0F1AD2DBD400A7910C /* CAPSPageMenu.swift in Sources */,
 				69AA71D01AF5216D00A8F99B /* FriendCell.swift in Sources */,
 				69060C3E1AD2D0320062800A /* Word.swift in Sources */,

@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 class MineViewController: UIViewController {
-    var parent: ViewController?
+    var parent: HomeViewController?
     
-    func setViewController(vc: ViewController) {
+    func setViewController(vc: HomeViewController) {
         parent = vc
     }
     

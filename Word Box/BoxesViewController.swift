@@ -17,9 +17,9 @@ class BoxesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     var sentences: List<Sentence>?
     
-    var parent: ViewController?
+    var parent: HomeViewController?
     
-    func setViewController(vc: ViewController) {
+    func setViewController(vc: HomeViewController) {
         parent = vc
     }
     

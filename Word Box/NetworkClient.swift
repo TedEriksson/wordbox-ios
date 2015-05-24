@@ -13,6 +13,38 @@ import RealmSwift
 class NetworkClient {
     static let baseUrl = "https://wordbox.herokuapp.com"
     
+    class func addFriend(id: Int, username: String, callback: (Bool) -> ()) {
+        setHeaderFields()
+        Alamofire.request(.POST, "\(baseUrl)/users/\(id)/add_friend/\(username)")
+            .responseJSON { (_, response, _, _) -> Void in
+                self.updateHeaderFields(response!)
+                
+                if (response!.statusCode == 200) {
+                    println(response?.statusCode)
+                    callback(true)
+                    return
+                }
+                
+                callback(false)
+                return
+        }
+    }
+    
+    class func getRequests(id: Int, callback: (String?) -> ()) {
+        setHeaderFields()
+        Alamofire.request(.GET, "\(baseUrl)/users/\(id)/friend_requests")
+            .responseJSON { (_, response, json, _) -> Void in
+                self.updateHeaderFields(response!)
+                
+                if response?.statusCode == 200 {
+                    println(json)
+                    return
+                }
+                
+                return
+        }
+    }
+    
     class func updateUser(id: Int, callback: (User)  -> ()) {
         setHeaderFields()
         Alamofire.request(.GET, "\(baseUrl)/users/\(id)")
@@ -133,11 +165,11 @@ class NetworkClient {
         let tt = defaults.objectForKey("token-type") as? String
         let c = defaults.objectForKey("client") as? String
         let e = defaults.objectForKey("expiry") as? String
-//        println(at)
-//        println(uid)
-//        println(tt)
-//        println(c)
-//        println(e)
+        println(at)
+        println(uid)
+        println(tt)
+        println(c)
+        println(e)
         if let at = at, let uid = uid, let tt = tt, let c = c, let e = e {
             manager.session.configuration.HTTPAdditionalHeaders = [
                 "Access-Token": at,
@@ -151,11 +183,21 @@ class NetworkClient {
     
     class func updateHeaderFields(response: NSHTTPURLResponse) {
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(response.allHeaderFields["Access-Token"], forKey: "access-token")
-        defaults.setObject(response.allHeaderFields["Uid"], forKey: "uid")
-        defaults.setObject(response.allHeaderFields["Token-Type"], forKey: "token-type")
-        defaults.setObject(response.allHeaderFields["Client"], forKey: "client")
-        defaults.setObject(response.allHeaderFields["Expiry"], forKey: "expiry")
+        if let at: AnyObject = response.allHeaderFields["Access-Token"] {
+            defaults.setObject(at, forKey: "access-token")
+        }
+        if let uid: AnyObject = response.allHeaderFields["Uid"] {
+            defaults.setObject(uid, forKey: "uid")
+        }
+        if let tt: AnyObject = response.allHeaderFields["Token-Type"] {
+            defaults.setObject(tt, forKey: "token-type")
+        }
+        if let c: AnyObject = response.allHeaderFields["Client"] {
+            defaults.setObject(c, forKey: "client")
+        }
+        if let e: AnyObject = response.allHeaderFields["Expiry"] {
+            defaults.setObject(e, forKey: "expiry")
+        }
         defaults.synchronize()
     }
 }

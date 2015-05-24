@@ -8,9 +8,9 @@
 
 import UIKit
 import Alamofire
-import Realm
+import RealmSwift
 
-class ViewController: UIViewController, CAPSPageMenuDelegate {
+class HomeViewController: UIViewController, CAPSPageMenuDelegate {
     var pageMenu: CAPSPageMenu?
     
     var user: User?
@@ -71,6 +71,10 @@ class ViewController: UIViewController, CAPSPageMenuDelegate {
         self.view.backgroundColor = UIColor(red: 24.0/255.0, green: 120.0/255.0, blue: 200.0/255.0, alpha: 1.0)
         
         self.view.bringSubviewToFront(addButton)
+        
+        NetworkClient.getRequests(user!.id, callback: { (json) -> () in
+            println(json)
+        })
     }
     
     func setUserObject(user: User) {

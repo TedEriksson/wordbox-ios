@@ -16,11 +16,11 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var friends: List<User>?
     
-    var parent: ViewController?
+    var parent: HomeViewController?
     
     var newFriendPopoverViewController: NewFriendPopover!
     
-    func setViewController(vc: ViewController) {
+    func setViewController(vc: HomeViewController) {
         parent = vc
     }
     
@@ -66,7 +66,8 @@ class FriendsViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         if indexPath.row == 0 {
-            println("Add Friend")
+            newFriendPopoverViewController.user = self.parent!.user
+            newFriendPopoverViewController.vc = self
             let cell: UITableViewCell! = tableView.cellForRowAtIndexPath(indexPath)
             let popover = newFriendPopoverViewController.popoverPresentationController
             popover?.permittedArrowDirections = UIPopoverArrowDirection.Up
